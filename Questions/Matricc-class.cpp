@@ -45,12 +45,34 @@ class Matrix
                 cout <<endl;
             }
             
-        }
+        } 
+        friend Matrix operator+(Matrix m1, Matrix m2);
 };
+    Matrix operator+(Matrix m1, Matrix m2)
+    {
+       Matrix temp(3,3);
+       {
+           for (int i = 0; i < 3; i++)
+           {
+               for (int j = 0; j < 3; j++)
+               {
+                temp.arr[i][j]= m1.arr[i][j] + m2.arr[i][j];
+                 return temp;
+               }
+               
+           }
+           
+       }
+
+
+    }
 int main()
 {
-    Matrix m1(3,3);
+    Matrix m1(3,3), m2(3,3),m3(3,3);
     m1.accept();
     m1.display();
-
+    m2.accept();
+    m2.display();
+    m3 = m1 + m2;
+    m3.display();
 }
