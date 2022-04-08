@@ -51,21 +51,33 @@ class Matrix
         } 
         void add(Matrix m1, Matrix m2)
         {
-            // Matrix temp(3,3);
+            
             for (int i = 0; i < 3; i++)
             {
                 for (int j = 0; j < 3; j++)
                 {
                     arr[i][j] = m1.arr[i][j] + m2.arr[i][j];
-                    // return temp;
+                    
                 }
                 
             }
         }
+         void sub(Matrix m1, Matrix m2)
+        {
+            
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    arr[i][j] = m1.arr[i][j] - m2.arr[i][j];
+                    
+                }
+                
+            }
+        }
+
 };
-// void Matrix::operator+(Matrix m1, Matrix m2)
-// {
-// }
+
 int main()
 {
     Matrix m1(3,3), m2(3,3),m3(3,3);
@@ -74,5 +86,9 @@ int main()
     m2.accept();
     m2.display();
     m3.add(m1, m2);
+    cout<<"Addition is : ";
     m3.display();
-}
+    m3.sub(m1, m2);
+    cout <<"Substraction: ";
+    m3.display();
+ }
