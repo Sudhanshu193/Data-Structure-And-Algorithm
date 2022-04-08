@@ -4,9 +4,10 @@ class Matrix
 {   
     int row;
     int col;
-    int **arr;
+   
 
     public:
+        int **arr;
         Matrix(int r, int c)
         {
             // this->arr = new int[r*c];
@@ -22,6 +23,7 @@ class Matrix
                     }
             }
         }
+
         void accept()
         {
             cout<<"Enter the matrix element: ";
@@ -33,6 +35,7 @@ class Matrix
                 }   
             }
         }
+
         void display()
         {
             cout<<"Matrix is: "<<endl;
@@ -46,26 +49,23 @@ class Matrix
             }
             
         } 
-        friend Matrix operator+(Matrix m1, Matrix m2);
+        void add(Matrix m1, Matrix m2)
+        {
+            // Matrix temp(3,3);
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    arr[i][j] = m1.arr[i][j] + m2.arr[i][j];
+                    // return temp;
+                }
+                
+            }
+        }
 };
-    Matrix operator+(Matrix m1, Matrix m2)
-    {
-       Matrix temp(3,3);
-       {
-           for (int i = 0; i < 3; i++)
-           {
-               for (int j = 0; j < 3; j++)
-               {
-                temp.arr[i][j]= m1.arr[i][j] + m2.arr[i][j];
-                 return temp;
-               }
-               
-           }
-           
-       }
-
-
-    }
+// void Matrix::operator+(Matrix m1, Matrix m2)
+// {
+// }
 int main()
 {
     Matrix m1(3,3), m2(3,3),m3(3,3);
@@ -73,6 +73,6 @@ int main()
     m1.display();
     m2.accept();
     m2.display();
-    m3 = m1 + m2;
+    m3.add(m1, m2);
     m3.display();
 }
