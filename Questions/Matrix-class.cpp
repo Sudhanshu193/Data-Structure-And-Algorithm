@@ -13,17 +13,17 @@ class Matrix
             // this->arr = new int[r*c];
             row=r;
             col=c;
-            arr = new int*[row]; 
+            arr = new int*[row]; //Here we are creating memory in heap in row.
          for (int i = 0; i < row; ++i)
             {
                 arr[i] = new int[col];
                 for (int j = 0; j < col; ++j)
                     {
-                        arr[i][j] = 0;
+                        arr[i][j] = 0; // assigning every element = 0;
                     }
             }
         }
-
+        //taking matrix
         void accept()
         {
             cout<<"Enter the matrix element: ";
@@ -35,7 +35,7 @@ class Matrix
                 }   
             }
         }
-
+        //displaying matrix
         void display()
         {
             cout<<"Matrix is: "<<endl;
@@ -49,6 +49,7 @@ class Matrix
             }
             
         } 
+        //Add function
         void add(Matrix m1, Matrix m2)
         {
             
@@ -62,6 +63,7 @@ class Matrix
                 
             }
         }
+        //substraction Function
          void sub(Matrix m1, Matrix m2)
         {
             
@@ -71,6 +73,23 @@ class Matrix
                 {
                     arr[i][j] = m1.arr[i][j] - m2.arr[i][j];
                     
+                }
+                
+            }
+        }
+        //multiplication Function
+         void multi(Matrix m1, Matrix m2)
+        {
+            
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    for (int k = 0; j < 3; j++)
+                    {
+                        arr[i][j]=0;
+                        arr[i][j] += m1.arr[i][j] * m2.arr[i][j];
+                    }   
                 }
                 
             }
@@ -90,5 +109,8 @@ int main()
     m3.display();
     m3.sub(m1, m2);
     cout <<"Substraction: ";
+    m3.display();
+    m3.multi(m1 , m2);
+     cout << "Multiplication: ";
     m3.display();
  }
