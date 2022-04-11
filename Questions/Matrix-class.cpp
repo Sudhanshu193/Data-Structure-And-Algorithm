@@ -90,11 +90,9 @@ class Matrix
                         arr[i][j]=0;
                         arr[i][j] += m1.arr[i][j] * m2.arr[i][j];
                     }   
-                }
-                
+                }  
             }
         }
-
 };
 
 int main()
