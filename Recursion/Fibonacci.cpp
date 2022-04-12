@@ -4,7 +4,7 @@ int fabo(int n)
 {
     if(n > 2)
     {
-        return fabo(n-1) +fabo(n-2);
+        return fabo(n-1) + fabo(n-2);
     }
     else if (n==2)
     {
