@@ -9,12 +9,11 @@ int main()
    cout <<"Enter the String:"<<endl;
    getline(cin, s);
    //cin >>s;
-   for ( i = s.length(); i >= 0; i--)
+   for( i = s.length(); i >= 0; i--)
    {
-       b=b+s[i];
-//method 1
-       //cout <<s[i];
-
+     b=b+s[i];
+    //method 1
+    //cout <<s[i];
    }
    // method 2
    cout << b;
