@@ -1,6 +1,7 @@
 #include<stdio.h>
+//int x=0;   we can use gobal variable in place of static as well and the value will be global and last change will be in all recursive call.
 int fun(int n)
-{   static int x =0;
+{  static int x =0;
     if (n>0)
     {
       x++;
