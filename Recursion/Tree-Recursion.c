@@ -3,7 +3,8 @@ void fun(int n)
 {
  if(n>0)
  {  //when more then one recursive function is in the function then that function is know as tree recursion;
-     printf("%d", n);
+     printf("%d\n", n);
+     fun(n-1);
      fun(n-1);
      fun(n-1);
  }
