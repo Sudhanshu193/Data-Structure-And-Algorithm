@@ -13,5 +13,5 @@ void TOH(int n , int a , int b , int c )
 }
 int main()
 {
-TOH(3 , 1,2,3);
+TOH(4 , 1,2,3);
 }
