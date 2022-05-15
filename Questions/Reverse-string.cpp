@@ -11,10 +11,10 @@ int main()
    //cin >>s;
    for( i = s.length(); i >= 0; i--)
    {
-     b=b+s[i];
+     //b=b+s[i];
     //method 1
-    //cout <<s[i];
+      cout <<s[i];
    }
    // method 2
-   cout << b;
+   //cout << b;
 }
