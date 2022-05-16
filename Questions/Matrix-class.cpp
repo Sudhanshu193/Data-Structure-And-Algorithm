@@ -8,9 +8,9 @@ class Matrix
 
     public:
         int **arr;
-        Matrix(int r, int c)
+        Matrix (int r, int c)
         {
-            // this->arr = new int[r*c];
+            /// this->arr = new int[r*c];
             row=r;
             col=c;
             arr = new int*[row]; //Here we are creating memory in heap in row.
