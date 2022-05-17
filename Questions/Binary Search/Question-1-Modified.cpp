@@ -43,6 +43,8 @@ int binary_search2(int arr[], int key)
         else if(key > arr[mid])
         {
             l = mid + 1;
+
+            
         }
         else
             h = mid - 1;
