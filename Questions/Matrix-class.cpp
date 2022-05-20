@@ -109,6 +109,6 @@ int main()
     cout <<"Substraction: ";
     m3.display();
     m3.multi(m1 , m2);
-     cout << "Multiplication: ";
+     cout << "Multiplication of: ";
     m3.display();
  }
