@@ -10,7 +10,7 @@ p[1]=5;
 p[2]=9;
 p[3]=7;
 p[4]=6;
-q = (int *)malloc(5*sizeof(int));
+q =(int *)malloc(5*sizeof(int));
 for ( i = 0; i < 5; i++)
 {
     q[i]=p[i];
