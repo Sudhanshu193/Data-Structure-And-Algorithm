@@ -16,7 +16,7 @@ void display(struct array arr)
     
 }
 
-void Insert(struct array *arr , int index , int x)
+void Insert(struct array * arr , int index , int x)
 {
     int i;
     if (index > 0 && index <arr->length)
