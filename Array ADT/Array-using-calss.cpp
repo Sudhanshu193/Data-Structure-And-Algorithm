@@ -11,7 +11,7 @@ class array
     void dispaly()
     {
         int i;
-        cout <<"The element are : ";
+        cout <<"The  element are : ";
         for ( i = 0; i < length; i++)
         {
           cout<<" "<<A[i];
