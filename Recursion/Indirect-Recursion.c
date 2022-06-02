@@ -9,7 +9,7 @@ void funA(int n)
     }
     
 }
-void funB(int n)
+void funB (int n)
 {
     if (n>1)
     {
