@@ -10,11 +10,11 @@ int main() // unsolved yet.
         {
             if(i == j)
             {
-                cout <<j;
+                cout <<"*";
             }
             else if(i >4 && j == lines -i)
             {
-                cout <<j;
+                cout <<"*";
             }
             else
                 cout <<" ";
