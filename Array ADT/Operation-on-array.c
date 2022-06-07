@@ -51,13 +51,16 @@ int Delete(struct array *arr, int index)
         arr->A[i]=arr->A[i+1];
     }
     arr->length--;
-    return x;
-        
+    return x;    
     }
-    
-
-    
-
+}
+int get(struct array *arr , int index)
+{
+    return arr->A[index];
+}
+void set(struct array *arr , int index , int x)
+{
+    arr->A[index]=x;
 }
 
 int main()
@@ -75,5 +78,9 @@ int main()
     //deleting the element at given index
    printf("%d\n", Delete(&arr, 2));
     display(arr);
+    printf("\n");
+   printf("%d\n", get(&arr , 3));
+   set(&arr , 1, 18);
+   display(arr);
 
 }
