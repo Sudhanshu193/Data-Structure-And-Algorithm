@@ -7,14 +7,14 @@ int main()
     int i=0;
     int j =0;
     int k =0;
-    int m, n;
+    int m=5, n=5;
     while(i<m && j<n)
     {
         if(A[i]<B[j])
             C[k++]=A[i++];
         else
             C[k++]=B[j++];
-
+    }
      for (; i < m; i++)
         {
             C[k++]=A[i];
@@ -24,8 +24,9 @@ int main()
         {
             C[k++]=B[j];
         }      
-    }
-    for ( i = 0; i < 10; i++)
+   
+   
+ for ( i = 0; i < 10; i++)
     {
         printf("%d ", C[i]);
     }
