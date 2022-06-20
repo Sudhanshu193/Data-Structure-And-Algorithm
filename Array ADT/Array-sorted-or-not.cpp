@@ -15,16 +15,17 @@ void Display(int A[] , int n)
     }
     
 }
+//Doing sorting
 void DoSort(int A[], int n)
 {
     for (int i = 0; i < n -1; i++)
     {
+       // for()
         if (A[i] > A[i + 1])
         {
             swap(&A[i], &A[i +1]);
 
-        }
-        
+        }   
     } 
 }
 int Issorted(int A[], int n)
@@ -34,15 +35,14 @@ int Issorted(int A[], int n)
         if (A[i] > A[i + 1])
         {
             return false;
-
         } 
     } 
     return true;
 }
 int main()
 {
-    int A[8]={4,8,12,16,26,20,22,24};
-    int n = 8;
+    int A[7]={9,5,2,3,12,1,5};
+    int n = 7;
    cout <<"Is Array Sorted : "<<Issorted(A, n)<<endl;
    Display(A , n);
    cout <<endl;
