@@ -25,7 +25,7 @@ class matrix
             return A[i*(i-1)/2 + j-1];
         }
         else
-            return 0;
+             return 0;
      }
      void display()
      {
@@ -68,9 +68,6 @@ int main()
     m.set(5,4,5);
 
     m.display();
-
-
-
-
-
+    
+ return 0;
 }
