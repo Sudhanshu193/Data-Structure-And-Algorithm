@@ -3,6 +3,7 @@
 struct DiagonalMatrix
 {
     int A[10];
+    
     int n;
 };
 void set(struct DiagonalMatrix *m , int i , int j, int element )
