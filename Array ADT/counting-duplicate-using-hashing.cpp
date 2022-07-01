@@ -2,6 +2,7 @@
 using namespace std;
 int main()
 {
+
   int A[10]={3,6,8,8,12,12,15,15,15,20};
   int high =20;
   int i;
@@ -18,5 +19,4 @@ int main()
     }
     
   }
-  
 }
