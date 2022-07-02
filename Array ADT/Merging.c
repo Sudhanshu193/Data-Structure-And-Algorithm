@@ -4,9 +4,10 @@ int main()
     int A[5]={3,8,16,20,25};
     int B[5]={4,10,12,22,23};
     int C[15]={};
-    int i=0;
-    int j =0;
-    int k =0;
+    int i ,j , k;
+    i=0;
+    j =0;
+     k =0;
     int m=5, n=5;
     while(i<m && j<n)
     {
