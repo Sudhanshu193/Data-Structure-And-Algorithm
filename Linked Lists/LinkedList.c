@@ -84,6 +84,51 @@ struct Node *Improved(struct Node *p, int key)
     }
     
 }
+int count(struct Node *p)
+{
+    int count =0;
+
+    while (p!=NULL)
+    {
+        count ++;
+        p=p->next;
+    }
+    return count;
+}
+
+//Inserting node at start
+void insertAtfirst(struct Node *p , int x)
+{
+    struct Node*t;
+    t=(struct Node *)malloc(sizeof(struct Node));
+    t->data=x;
+    t->next=first;
+    first =t;
+
+}
+void insert(struct Node *p, int pos, int x)
+{
+    struct Node *t;
+    if (pos<0 || pos>count(p))
+    {
+        return ;
+    }
+    t=(struct Node *)malloc(sizeof(struct Node));
+    t->data=x;
+    if(pos==0)
+    {
+        t->next=first;
+        first=t;
+    }
+    else
+    { for (int i = 0; i < pos-1 ; i++)
+        {
+                p=p->next;
+        }       
+        t->next=p->next;
+        p->next=t;
+    }
+}
 
 int main()
 { 
@@ -102,6 +147,14 @@ int main()
     }
     else
         printf("Element not found");
+    Display(first);
 
+    printf("\nInserting element at first:\n");
+    insertAtfirst(first,20);
+    Display(first);
+
+
+    printf("\n Inserting at position:\n");
+    insert(first, 4,12);
     Display(first);
 }
