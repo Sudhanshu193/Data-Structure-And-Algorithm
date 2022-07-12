@@ -9,10 +9,12 @@ int fabo(int n)
     else if (n==2)
     {
         return 1;
-    }else
+    }else if(n==1)
     {
-        return 0;
+        return 1;
     }
+    else
+        return 0;
     
     
 }
