@@ -1,7 +1,9 @@
 #include<iostream>
+#include<algorithm>
 using namespace std;
 int main()
 {
+  
   int arr[]={2,2,1,1,1,2,2};
   int n = sizeof(arr)/sizeof(arr[0]);
   
@@ -26,7 +28,7 @@ int main()
   }
     
   }
-  if(count > n/2)
+  if(maxCount > n/2)
     {
         cout<<" "<<arr[index];
 
