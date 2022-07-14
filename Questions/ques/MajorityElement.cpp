@@ -21,7 +21,7 @@ int main()
 
         }
     }
-  if(maxCount<count)
+  if(maxCount <count)
   {
     maxCount=count;
     index=i;
