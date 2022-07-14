@@ -5,7 +5,7 @@ void value2(double d)
 {
  float a = log2(d);
  cout <<a<<endl;
-    if(a == (int) a)
+    if(a ==(int) a)
         cout <<"True";
     else
         cout <<"False";
