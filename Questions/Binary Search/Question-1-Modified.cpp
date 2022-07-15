@@ -1,5 +1,6 @@
 #include<iostream>
 using namespace std;
+
 int binary_search1(int arr[], int key)
 {    int l =0;
     int h=9 ;
@@ -56,7 +57,7 @@ int main()
 int arr[10]={1,1,2,2,2,2,2,4,4,6};
 int key =2;
 int result = binary_search1(arr , key);
-cout<<"First occurence at index: "<<result;
+cout<<"First occurence at index: "<<result<<endl;
 cout<<" last occurence at index: "<<binary_search2(arr , key);
 
 }
