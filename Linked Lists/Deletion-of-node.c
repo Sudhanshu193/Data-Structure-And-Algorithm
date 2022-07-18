@@ -82,21 +82,41 @@ int Delete( struct Node *p, int postion)
     }
     
 }
-
+ int isSort(struct Node *p)
+ {
+    int x=-1;
+    while (p != NULL)
+    {
+        if (p->data <x)
+        {
+            return 0; 
+        }
+        x=p->data;
+        p=p->next;
+    }
+    return 1;
+    
+ }
 
 
 int main()
 {
   insert(first, 0 ,10);
-  insert(first, 1,2);
-  insert(first, 0,20);
+  insert(first, 1,20);
+  insert(first, 2,30);
   insert(first, 3,32);
-  insert(first,4 , 30);
-  insert(first,5, 300);
-  insert(first,6 , 3);
+  insert(first, 4, 29);
+  insert(first, 5, 37);
+  insert(first, 6, 38);
   
   Display(first);
 printf("\n");
  printf("%d is deleted\n" , Delete(first, 4));
  Display(first);
+ if (isSort(first))
+ {
+    printf("\nyes sorted");
+ }else 
+    printf("\nit is not sorted");
+ 
 }
