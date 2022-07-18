@@ -55,18 +55,32 @@ void Display(struct Node *p)
     }
     
 }
-int Delete( int postion)
+int Delete( struct Node *p, int postion)
 {
-    struct Node *p, *q;
+    struct Node  *q;
     int x=-1,i;
     if(postion==1)
     {
         x=first->data;
         p=first;
         first=first->next;
-        Delete p;
+        free(q);
+        return x;
+    }
+    else
+    {
+        for(i=0; i<postion-1 ; i++)
+        {
+            q=p;
+            p=p->next;
+        }
+        q->next=p->next;
+        x=p->data;
+        free(p);
+        return x;
 
     }
+    
 }
 
 
@@ -82,4 +96,7 @@ int main()
   insert(first,6 , 3);
   
   Display(first);
+printf("\n");
+ printf("%d is deleted\n" , Delete(first, 4));
+ Display(first);
 }
