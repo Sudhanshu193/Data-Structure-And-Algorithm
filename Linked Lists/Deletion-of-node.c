@@ -94,19 +94,34 @@ int Delete( struct Node *p, int postion)
         x=p->data;
         p=p->next;
     }
-    return 1;
-    
+    return 1;   
+ }
+ void duplicate(struct Node * p)
+ {
+   struct Node *q = first->next;
+   while (q !=NULL)
+   {
+        if(p->data!= q->data)
+        {
+            p=q;
+            q=q->next;
+        }
+        p->next=q->next;
+        free(q);
+        q= p->next;
+   }
+      
  }
 
 
 int main()
 {
   insert(first, 0 ,10);
-  insert(first, 1,20);
+  insert(first, 1,30);
   insert(first, 2,30);
   insert(first, 3,32);
   insert(first, 4, 29);
-  insert(first, 5, 37);
+  insert(first, 5, 29);
   insert(first, 6, 38);
   
   Display(first);
@@ -116,7 +131,13 @@ printf("\n");
  if (isSort(first))
  {
     printf("\nyes sorted");
- }else 
+ }
+ else 
     printf("\nit is not sorted");
+
+duplicate(first);
+printf("\n");
+Display(first);
+
  
 }
