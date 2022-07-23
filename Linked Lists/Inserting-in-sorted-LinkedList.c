@@ -15,6 +15,7 @@ void Create(int a[], int n)
     first=(struct Node *)malloc(sizeof(struct Node));
     first->data=a[0];
     first->next=NULL;
+    //linked List creation
     last = first;
 
     for (int i = 1; i < n; i++)
