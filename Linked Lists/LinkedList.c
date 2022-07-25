@@ -26,7 +26,9 @@ void Create(int a[], int n)
         last=t;
     }   
 }
+
 void Display(struct Node *p)
+
 {
     while (p!=NULL)
     {
