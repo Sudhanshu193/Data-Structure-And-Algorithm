@@ -64,7 +64,7 @@ int Delete( struct Node *p, int postion)
         x=first->data;
         p=first;
         first=first->next;
-        free(q);
+        free(p);
         return x;
     }
     else
@@ -118,10 +118,10 @@ int main()
 {
   insert(first, 0 ,10);
   insert(first, 1,30);
-  insert(first, 2,30);
+//   insert(first, 2,30);
   insert(first, 3,32);
   insert(first, 4, 29);
-  insert(first, 5, 29);
+//   insert(first, 5, 29);
   insert(first, 6, 38);
   
   Display(first);
@@ -135,9 +135,11 @@ printf("\n");
  else 
     printf("\nit is not sorted");
 
-duplicate(first);
+//duplicate(first);
 printf("\n");
-Display(first);
+printf("the deleted index is :%d " ,Delete(first, 4));
+
+//Display(first);
 
  
 }
