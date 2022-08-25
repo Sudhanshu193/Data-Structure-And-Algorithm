@@ -57,8 +57,9 @@ void reversingWithArray(struct Node *p , int n)
     i--;
  }
 }
-void reversing_Slidingpointer(struct Node *p )
+void reversing_Slidingpointer()
 {
+    struct Node *p=first;
     struct Node *q= NULL, *r = NULL;
 
 while (p)
@@ -82,7 +83,7 @@ int main()
    // Display(first);
 
     printf("\nreversing LinkedList using sliding pointer\n");
-    reversing_Slidingpointer(first);
+    reversing_Slidingpointer();
     Display(first);
     
 }
