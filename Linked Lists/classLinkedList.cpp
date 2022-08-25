@@ -77,7 +77,30 @@ void insert(int v, int index)
     t->next=p;
     
 }
-  void Display()
+void Delete(int index)
+{
+    Node *p=first;
+    Node *r=nullptr;
+    Node *q= nullptr;
+
+    if(index==1)
+    {
+        first=first->next;
+        delete[]p;
+        return;
+        
+    }
+    for (int i = 0; i < index; i++)
+    {
+        r=q;
+        q=p;
+        p=p->next;
+    }
+      r->next=p;
+      delete []q;
+    
+}
+ void Display()
   {
     Node *p=first;
     while (p !=nullptr)
@@ -87,21 +110,53 @@ void insert(int v, int index)
     }
     
   }
+
+void reverse()
+{
+    Node *p=first;
+    Node *q = nullptr;
+    Node *r = nullptr;
+
+    while (p)
+    {
+        r=q;
+        q=p;
+        p=p->next;
+        q->next=r;
+    }
+    first=q;
+    
+}
+
+//  void recersiveDisplay() 
+//  { Node *p=first;
+//     if(p==nullptr)
+//     {
+//        return;
+//     }
+//      cout<<p->data<<" ";
+//      recersiveDisplay(p->next);
+//  }
 };
 
 int main()
 {   int n=5;
 
     int arr[n]={1,2,3,4,5};
-
     LinkedList a(arr ,n);
     a.Display();
     cout<<endl;
-    //
+    
    // a.insert(8);
-   a.insert(5, 2);
-    a.Display();
+   //a.insert(5, 2);
+   //a.Display();
+ //  cout<<endl;
+   a.Delete(3);
+  // a.recersiveDisplay();
+   
+   a.Display();
   // cout<< a.length;
-
-
+   a.reverse();
+   cout<<endl;
+    a.Display();
 }
