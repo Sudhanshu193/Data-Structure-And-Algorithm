@@ -15,6 +15,8 @@ class Node{
 class LinkedList
 {
   Node* first;
+  Node* third;
+
   
 
  public:
@@ -22,6 +24,7 @@ class LinkedList
   LinkedList()
   {
     first=nullptr;
+    third= nullptr;
     length=0;
   }
 
@@ -137,26 +140,111 @@ void reverse()
 //      cout<<p->data<<" ";
 //      recersiveDisplay(p->next);
 //  }
+
+//concatination
+LinkedList add( LinkedList b)
+{
+    Node *p =first;
+    while (p->next!=nullptr)
+    {
+        p=p->next;
+    }
+    p->next=b.first;
+    
+}
+ 
+ LinkedList marge( LinkedList b)
+ {
+    Node *third;
+    Node * last;
+    Node *second =b.first;
+
+    if (third->data < second->data)
+    {
+        last = third = first;
+        third = third ->next;
+        last ->next=nullptr;
+    }
+    else
+    {
+        last = first= second;
+        second = second->next;
+        last ->next= nullptr;
+    }
+
+    while(third!=nullptr && second !=nullptr)
+    {
+        if (third->data <second->data)
+        {
+            last->next=first;
+            last =first;
+            third =third->next;
+            last -> next = nullptr;
+        }
+        else
+        {
+            last ->next= second;
+            last = second;
+            second= second->next;
+            last ->next = nullptr;
+        }
+        
+    }
+    if (third !=nullptr)
+    {
+        last ->next=third;
+    }
+    else
+    {
+        last->next=second;
+    }
+    
+ }
+ 
+friend LinkedList operator+(LinkedList a, LinkedList b);
 };
+// operator overloading for adding two linkedList
+LinkedList operator+ (LinkedList a, LinkedList b)
+{   
+    LinkedList temp;
+
+     
+    Node *p= a.first;
+    temp.first=a.first;
+    Node *second = b.first;
+
+    while (p !=nullptr)
+    {
+        p=p->next;
+    }
+    p->next=second;
+    return temp;
+}
 
 int main()
 {   int n=5;
 
     int arr[n]={1,2,3,4,5};
+    int arr2[n]={6,7,8,9,10};
     LinkedList a(arr ,n);
-    a.Display();
-    cout<<endl;
-    
+    LinkedList b(arr2, n);
+
+     a.Display();
+     cout<<endl;
+     //a.add(b);
+
    // a.insert(8);
    //a.insert(5, 2);
    //a.Display();
  //  cout<<endl;
-   a.Delete(3);
+  // a.Delete(3);
   // a.recersiveDisplay();
    
-   a.Display();
+   //a.Display();
   // cout<< a.length;
-   a.reverse();
-   cout<<endl;
-    a.Display();
+  // a.reverse();
+   //cout<<endl;
+   a.marge(b);
+   
+   a.Display();
 }
