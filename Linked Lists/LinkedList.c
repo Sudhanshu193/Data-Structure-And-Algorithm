@@ -7,7 +7,7 @@ struct Node
 
     struct Node *next;
 
-}*first=NULL;
+}*first=NULL, *second= NULL, *third=NULL;
 
 void Create(int a[], int n)
 {
@@ -25,6 +25,25 @@ void Create(int a[], int n)
         last->next=t;
         last=t;
     }   
+}
+void create2(int b[], int m )
+{
+    struct Node *t, *last;
+    second= (struct Node*)malloc(sizeof(struct Node));
+    second->data=b[0];
+    second->next=NULL;
+    last =second;
+
+    for (int i = 1; i < m; i++)
+    {
+        t=(struct Node *)malloc(sizeof(struct Node));
+        t->data=b[i];
+        t->next=NULL;
+        last->next=t;
+        last=t;
+
+    }
+    
 }
 
 void Display(struct Node *p)
@@ -132,31 +151,77 @@ void insert(struct Node *p, int pos, int x)
     }
 }
 
+void merge(struct Node *p , struct Node *q)
+{
+    struct Node  *last;
+    if(p->data<q->data)
+    {
+        third=last=p;
+        p=p->next;
+        last->next =NULL;
+    }else
+    {
+        third=last=q;
+        q=q->next;
+        last ->next =NULL;
+    }
+    while (p!= NULL && q!= NULL)
+    {
+        if (p->data < q->data)
+        {
+            last->next=p;
+            last=p;
+            p=p->next;
+            last->next=NULL;
+        }
+        else
+        {
+            last->next=q;
+            last =q;
+            q=q->next;
+            last->next=NULL;
+        }
+    }if(p)
+        last->next=p;
+    else
+        last->next=q;    
+
+    
+    
+}
+
 int main()
 { 
     struct Node* temp;
-    int a[]={3,4,5,6,7,8,9};
+    int a[]={3,5,6,8,10};
+    int b[]={4,7,9,11,12};
     int n= sizeof(a)/sizeof(a[0]);
+    int m = sizeof(b)/ sizeof(b[0]); 
     Create(a,n);
     Display(first);
+    create2(b, m);
+    
     printf("\n");
+    Display(second);
     //temp=Lsearch(first, 8);
     //temp=RSearch(first, 9);
-    temp=Improved(first,9);
-    if (temp)
-    {
-        printf("Element found : %d\n", temp->data);
-    }
-    else
-        printf("Element not found");
-    Display(first);
+    // temp=Improved(first,9);
+    // if (temp)
+    // {
+    //     printf("Element found : %d\n", temp->data);
+    // }
+    // else
+    //     printf("Element not found");
+    // Display(first);
 
-    printf("\nInserting element at first:\n");
-    insertAtfirst(first,20);
-    Display(first);
+    // printf("\nInserting element at first:\n");
+    // insertAtfirst(first,20);
+   // Display(first);
+    // printf("\n Inserting at position:\n");
+    // insert(first, 4,12);
+    // Display(first);
+printf("\n");
+    merge(first, second);
+    Display(third);
 
-
-    printf("\n Inserting at position:\n");
-    insert(first, 4,12);
-    Display(first);
 }
