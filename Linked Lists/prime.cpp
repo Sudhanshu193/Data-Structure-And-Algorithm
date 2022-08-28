@@ -2,7 +2,7 @@
 using namespace std;
 int prime(int x)
 { int count =0;
-    for (int i = 1; i <=x; i++)
+    for (int i = 1; i <= x; i++)
     {
        if (x%i==0)
        {
