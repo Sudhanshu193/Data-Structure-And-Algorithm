@@ -48,6 +48,59 @@ class LinkedList
 
    
 }
+
+LinkedList(int arr[] , int n, bool loop)
+{
+    if(loop)
+    {
+        if(n>0)
+        {
+          first = new Node;
+          first->data=arr[0]; 
+          first->next=nullptr; 
+
+          Node*p=first;
+
+          for (int i = 1; i < n; i++)
+          {
+            Node*t=new Node;
+            t->data=arr[i];
+            t->next=nullptr;
+            p->next=t;
+            p=t;
+          }
+        Node *q=first;
+        int random=rand()%n;
+        for (int i = 0; i < random; i++)
+        {
+            q=q->next;
+        }
+        p->next=q;
+        }
+    }
+}
+bool Isloop()
+{
+    Node*p,*q;
+    p=first;
+    q=first;
+
+    do
+    {
+        p=p->next;
+        q=q->next;
+        if(q!=nullptr)
+           { 
+            q=q->next;
+           }
+        else
+            q=nullptr;
+
+        if(p==q)
+            return true;    
+    }while(p && q);
+    return false;
+}
 void insert(int v)
 {
     Node *t =new Node();
@@ -226,25 +279,17 @@ int main()
 
     int arr[n]={1,2,3,4,5};
     int arr2[n]={6,7,8,9,10};
-    LinkedList a(arr ,n);
-    LinkedList b(arr2, n);
+    // LinkedList a(arr ,n);
+    // LinkedList b(arr2, n);
+    LinkedList a(arr , n, true);
+    if(a.Isloop())
+    {
+        cout<<"Have Loop"<<endl;
+    }
+    else
+        cout<<"Not exist";
+    // a.Display();
+ 
 
-     a.Display();
-     cout<<endl;
-     //a.add(b);
-
-   // a.insert(8);
-   //a.insert(5, 2);
-   //a.Display();
- //  cout<<endl;
-  // a.Delete(3);
-  // a.recersiveDisplay();
-   
-   //a.Display();
-  // cout<< a.length;
-  // a.reverse();
-   //cout<<endl;
-   a.marge(b);
-   
-   a.Display();
+  
 }
