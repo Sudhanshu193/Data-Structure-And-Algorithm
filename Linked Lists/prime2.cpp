@@ -13,7 +13,13 @@ bool prime(int a)
 }
 int main()
 {
-    int x;
-    cin >>x;
-cout << prime(x);
+    int x, y,i;
+    cin >>x>>y;
+for(i =x; i<=y; i++)
+   {
+        if(prime(i))
+            cout << i<<" ";
+       
+   }       
 }
+
