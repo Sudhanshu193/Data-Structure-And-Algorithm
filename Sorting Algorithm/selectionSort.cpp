@@ -28,7 +28,6 @@ int main()
         cout<<arr[i]<<" ";
     }
  selectionSort(arr , n);
-
  cout<<endl<<"After sorting"<<endl;
   for(int i=0; i<n; i++)
     {
