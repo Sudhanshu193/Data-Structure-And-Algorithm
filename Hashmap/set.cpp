@@ -10,7 +10,7 @@ int main()
     int arr[]={1,0,1,1,0,0,2,1,1,2,1,2,1};
      int n= sizeof(arr)/sizeof(arr[0]);
      //tp print set in decreasing order you have to make set<int>set1-> set<int, greater<int>>set1(arr, arr+n)
-    multiset<int>set1(arr, arr+n);
+    set<int>set1(arr, arr+n);
     set<int>::iterator it;
     for(auto it=set1.begin(); it !=set1.end(); it++)
     {
