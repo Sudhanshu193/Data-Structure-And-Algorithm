@@ -28,6 +28,37 @@ void push(stack *st , int x)
     }
     return x;        
  }
+ int peek(stack st, int pos)
+ {
+    int x=-1;
+    if(st.top-pos+1 < 0)
+        return 0;
+    else
+    {
+       x = st.s[st.top-pos+1]; 
+    } 
+    return x;   
+ }
+ int top(stack st)
+ {
+    if(st.top==-1)
+        cout<<"stack empty"<<endl;
+    else
+     return st.s[st.top];    
+ }
+ int isempty(stack st)
+ {
+    if(st.top==-1)
+        return 1;
+    return 0;    
+ }
+ int isFull(stack st)
+ {
+    if (st.top==st.size-1)
+        return 1;
+    return 0;    
+    
+ }
 int main()
 {
    struct stack st;
@@ -46,7 +77,15 @@ int main()
         push(&st, x);
 
     }
-    cout<<"Pop element is: "<<pop(&st);
+  //5  cout<<"Pop element is: "<<pop(&st);
 
-    cout<<"\ntop element : " <<st.s[st.top];
+    cout<<"\ntop element : " <<st.s[st.top]<<endl;
+
+    cout<<"\nPeek element: "<<peek(st, 3)<<endl;
+
+    cout<<"top element: "<<top(st)<<endl;
+
+    cout<<"is empty or not: "<<isempty(st);
+
+    
 }
