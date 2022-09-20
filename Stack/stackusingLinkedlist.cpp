@@ -47,6 +47,25 @@ int peek(int pos)
         return -1;    
 
 }
+
+int stackTop()
+{
+    if(top!=nullptr)
+        return top->data;
+}
+
+int isEmpty()
+{
+    if (top==nullptr)
+        return 1;   
+}
+bool isFull()
+{
+    Node*t=new Node;
+    if(t==nullptr)
+        return 1;
+    return 0;    
+}
 int main()
 {
     int a[]={1,4,5,8,9};
