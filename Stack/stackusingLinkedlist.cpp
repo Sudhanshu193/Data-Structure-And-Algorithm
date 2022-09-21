@@ -59,7 +59,7 @@ int isEmpty()
     if (top==nullptr)
         return 1;   
 }
-bool isFull()
+bool isFulls()
 {
     Node*t=new Node;
     if(t==nullptr)
