@@ -61,6 +61,4 @@ if(search(root, number) == true)
     cout<<"Number found";
 else
     cout<<"Not found";    
-
-
 }
