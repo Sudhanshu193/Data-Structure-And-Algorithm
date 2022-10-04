@@ -7,6 +7,14 @@ struct BSTNode{
     BSTNode* right;
     };
 
+BSTNode*Findmin(BSTNode* root)
+ {
+    while(root->left != nullptr)
+    {
+        root=root->left;
+    }
+    return root;
+ }  
  BSTNode* GetNewNode(int data)
  {
     BSTNode* NewNode = new BSTNode();
@@ -40,7 +48,45 @@ struct BSTNode{
     else
         return search(root->right, data);
 
- }  
+ }
+
+ struct BSTNode* Deletion(BSTNode* root, int data)
+ {
+    if(root==nullptr)
+        return root;
+    if(data< root->data)
+        root->left=Deletion(root->left, data);
+    else if(data > root->data)
+        root->right=Deletion(root->right, data);
+    else{
+        if(root->left == nullptr && root->right == nullptr)
+        {
+            delete root;
+            root=nullptr;
+        }
+        else if(root->left == nullptr)
+        {
+            BSTNode*temp=root;
+            root=root->right;
+            delete temp;
+        }
+        else if(root->right == nullptr)
+        {
+            BSTNode* temp = root;
+            root=root->left;
+            delete temp;
+        }
+        else
+        {
+            struct BSTNode* temp=Findmin(root->right);
+            root->data=temp->data;
+            root->right=Deletion(root->right, temp->data);
+
+        }
+        return root;
+    }            
+ }
+ 
 int main()
 {
  BSTNode *root=nullptr;
@@ -53,12 +99,17 @@ int main()
  root = Insert(root, 27);
  root = Insert(root, 40);
 
-int number;
-cout<<"Enter the number: "<<endl;
-cin>>number;
+// int number;
+// cout<<"Enter the number: "<<endl;
+// cin>>number;
 
-if(search(root, number) == true)
+// if(search(root, number) == true)
+//     cout<<"Number found";
+// else
+//     cout<<"Not found";   
+Deletion(root, 20); 
+if(search(root, 20) == true)
     cout<<"Number found";
 else
-    cout<<"Not found";    
+    cout<<"Not found"; 
 }
