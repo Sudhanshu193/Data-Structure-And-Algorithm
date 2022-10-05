@@ -84,7 +84,34 @@ BSTNode*Findmin(BSTNode* root)
 
         }
         return root;
-    }            
+    } 
+ }
+ //recursive call
+  void preorder(BSTNode* root)
+  {
+    if(root==nullptr)
+        return ;
+    
+    cout<<root->data<<" ";
+    preorder(root->left);
+    preorder(root->right);
+  }             
+ void inorder(BSTNode* root)
+ {
+    if(root==nullptr)
+        return ;
+    inorder(root->left);
+    cout<<root->data<<" ";
+    inorder(root->right); 
+ }
+
+ void postorder(BSTNode* root)
+ {
+    if(root== nullptr)
+        return ;
+    postorder(root->left);
+    postorder(root->right);
+    cout<<root->data<<" ";    
  }
  
 int main()
@@ -107,9 +134,15 @@ int main()
 //     cout<<"Number found";
 // else
 //     cout<<"Not found";   
-Deletion(root, 20); 
-if(search(root, 20) == true)
-    cout<<"Number found";
-else
-    cout<<"Not found"; 
+// Deletion(root, 20); 
+// if(search(root, 20) == true)
+//     cout<<"Number found";
+// else
+//     cout<<"Not found"; 
+preorder(root);
+cout<<endl;
+inorder(root);
+cout<<endl;
+postorder(root);
+
 }
