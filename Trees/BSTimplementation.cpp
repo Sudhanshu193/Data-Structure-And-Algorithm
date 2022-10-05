@@ -78,7 +78,7 @@ BSTNode*Findmin(BSTNode* root)
         }
         else
         {
-            struct BSTNode* temp=Findmin(root->right);
+            struct BSTNode* temp =Findmin(root->right);
             root->data=temp->data;
             root->right=Deletion(root->right, temp->data);
 
