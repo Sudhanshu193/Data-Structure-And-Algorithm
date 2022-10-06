@@ -1,4 +1,5 @@
 #include<iostream>
+#include<stack>
 using namespace std;
 struct BSTNode{
 
@@ -95,7 +96,24 @@ BSTNode*Findmin(BSTNode* root)
     cout<<root->data<<" ";
     preorder(root->left);
     preorder(root->right);
-  }             
+  } 
+  void preorderItrative(BSTNode*root)
+  {
+    stack<BSTNode*>st;
+    st.push(root);
+
+    while(!st.empty())
+    {
+        BSTNode* temp=st.top();
+        cout<<temp->data<<" ";
+        st.pop();
+
+        if(temp->right)
+          st.push(temp->right);
+        if(temp->left)
+            st.push(temp->left);  
+    }
+  }            
  void inorder(BSTNode* root)
  {
     if(root==nullptr)
@@ -103,6 +121,27 @@ BSTNode*Findmin(BSTNode* root)
     inorder(root->left);
     cout<<root->data<<" ";
     inorder(root->right); 
+ }
+ void inorderItrative(BSTNode*root)
+ {
+    BSTNode*current=root;
+    stack<BSTNode*>s;
+
+    while (current!=nullptr || s.empty()==false)
+    {
+        while (current!=nullptr)
+        {
+            s.push(current);
+            current=current->left;
+        }
+            current=s.top();
+            s.pop();
+
+            cout<<current->data<<" ";
+            current=current->right;
+    }
+    
+
  }
 
  void postorder(BSTNode* root)
@@ -139,10 +178,15 @@ int main()
 //     cout<<"Number found";
 // else
 //     cout<<"Not found"; 
+cout<<"Preorder recursive:"<<endl;
 preorder(root);
-cout<<endl;
+cout<<"\nInorder recursive: "<<endl;
 inorder(root);
-cout<<endl;
+cout<<"\npostorder recursive: "<<endl;
 postorder(root);
+cout<<"\nPreorder itrative: "<<endl;
+preorderItrative(root);
+cout<<"\nInorder itrative: "<<endl;
+inorderItrative(root);
 
 }
