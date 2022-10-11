@@ -97,6 +97,8 @@ BSTNode*Findmin(BSTNode* root)
     preorder(root->left);
     preorder(root->right);
   } 
+
+  
   void preorderItrative(BSTNode*root)
   {
     stack<BSTNode*>st;
