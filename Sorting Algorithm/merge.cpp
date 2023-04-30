@@ -53,8 +53,7 @@ void marge(int *arr, int *left, int leftCount, int *right, int rightCount)
     }
     for(i=mid; i<n; i++)
     {
-        right[i-mid]=arr[i];
-        
+        right[i-mid]=arr[i]; 
     }
 
     margeSort(left, mid);
